@@ -2,15 +2,19 @@
 
 :root {
   --ink-bg: #070709;
-  --ink-surface: #0d0e13;
-  --ink-elevated: #12141c;
+  --ink-surface: #0e0f14;
+  --ink-elevated: #151720;
   --bone: #f4f1ea;
   --ash: #9ca3af;
   --ash-muted: #6b7280;
   --hanko: #c8102e;
-  --hanko-hover: #df1637;
-  --hairline: rgba(244, 241, 234, 0.09);
-  --hairline-strong: rgba(244, 241, 234, 0.18);
+  --hanko-hover: #e01b3b;
+  --gold: #d4af37;
+  --gold-muted: rgba(212, 175, 55, 0.2);
+  --hairline: rgba(244, 241, 234, 0.08);
+  --hairline-strong: rgba(244, 241, 234, 0.16);
+  --ink-border: rgba(244, 241, 234, 0.1);
+  --ink-card: rgba(17, 19, 26, 0.75);
 }
 
 body {
@@ -18,6 +22,7 @@ body {
   color: var(--bone);
   overflow-x: hidden;
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -34,6 +39,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background: #1f222e;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--hanko);
@@ -51,7 +57,7 @@ body {
 .kanji-watermark {
   font-family: var(--font-kanji), 'Shippori Mincho', serif;
   color: #f4f1ea;
-  opacity: 0.032;
+  opacity: 0.035;
   user-select: none;
   pointer-events: none;
   line-height: 0.9;
@@ -61,27 +67,42 @@ body {
   font-family: var(--font-geist-mono), monospace;
 }
 
-/* Washi & Sumi-e Editorial Surfaces */
+/* Washi & Sumi-e Surfaces with Organic Glass Depth */
 .sumi-card {
-  background-color: rgba(13, 14, 19, 0.88);
+  background: linear-gradient(180deg, rgba(21, 23, 32, 0.82) 0%, rgba(13, 14, 19, 0.92) 100%);
   border: 1px solid var(--hairline);
-  transition: border-color 0.25s ease, background-color 0.25s ease;
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .sumi-card:hover {
   border-color: var(--hairline-strong);
-  background-color: rgba(18, 20, 28, 0.94);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-/* Hanko Stamp Border */
+/* Hanko Seal Pill (Soft Organic Japanese Stamp) */
 .hanko-seal {
-  border: 1px solid rgba(200, 16, 46, 0.55);
-  color: #f87171;
-  background-color: rgba(200, 16, 46, 0.08);
+  border: 1px solid rgba(200, 16, 46, 0.45);
+  color: #fca5a5;
+  background: rgba(200, 16, 46, 0.12);
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* Subtle SVG Washi Paper Grain Overlay */
+/* Washi Texture Overlay */
 .washi-grain {
-  background-image: radial-gradient(rgba(244, 241, 234, 0.035) 1px, transparent 0);
+  position: relative;
+}
+.washi-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: radial-gradient(#f4f1ea 1px, transparent 1px);
   background-size: 24px 24px;
 }

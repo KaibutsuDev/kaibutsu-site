@@ -1,22 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MessageSquareCode } from 'lucide-react';
 import Button from '@/components/ui/Button';
-import KaibutsuLogo from '@/components/ui/KaibutsuLogo';
 import Reveal from '@/components/ui/Reveal';
 import BrandMarkSvg from '@/components/ui/BrandMarkSvg';
 
 const HERO_METRICS = [
-  { value: 'Desde $250.000', label: 'Precios claros en pesos chilenos' },
-  { value: 'Carga en 1 seg', label: 'Rápida en celulares y computadores' },
-  { value: '100% Tuyo', label: 'Tu dominio, tus cuentas y tu página' },
-  { value: '2 Sistemas Propios', label: 'Funcionando hoy en comercios y colegios' },
+  { value: 'Desde $250.000', label: 'Valores claros en CLP' },
+  { value: 'Carga < 1 seg', label: 'Velocidad Next.js' },
+  { value: '100% Tuyo', label: 'Código y dominio propios' },
+  { value: 'SaaS Activos', label: 'K-Market y ProfeChileno' },
 ];
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-36 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-[var(--hairline)]">
-      {/* Sumi-e Atmospheric Scene Background (LCP Priority) */}
+    <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-[var(--hairline)]">
+      {/* Sumi-e Atmospheric Scene Background */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">
         <Image
           src="/images/scene-hero-sumie.webp"
@@ -24,110 +23,94 @@ export default function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-85"
+          className="object-cover object-center opacity-75 sm:opacity-85"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#070709]/70 via-transparent to-[var(--ink-bg)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#070709]/80 via-transparent to-[var(--ink-bg)]" />
       </div>
 
-      {/* Monumental Kanji Watermark (Right-aligned, 3% opacity) */}
+      {/* Monumental Kanji Watermark */}
       <div
         aria-hidden="true"
-        className="absolute top-28 right-4 sm:right-12 pointer-events-none select-none z-0"
+        className="absolute top-20 sm:top-28 right-2 sm:right-12 pointer-events-none select-none z-0"
       >
-        <span className="kanji-watermark text-[22vw] sm:text-[15vw] font-bold tracking-widest block">
+        <span className="kanji-watermark text-[30vw] sm:text-[16vw] font-bold tracking-widest block opacity-20 sm:opacity-30">
           怪物
         </span>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 space-y-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left / Main Editorial Column */}
-          <div className="lg:col-span-8 space-y-7">
+      <div className="max-w-7xl mx-auto relative z-10 space-y-12 sm:space-y-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+          {/* Main Editorial Column */}
+          <div className="lg:col-span-8 space-y-6 sm:space-y-7">
             <Reveal y={12}>
-              <div className="inline-flex items-center gap-3">
-                <span className="hanko-seal px-2.5 py-1 rounded-[3px] font-mono-tech text-[11px] uppercase tracking-[0.18em]">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="hanko-seal px-3 py-1 text-[11px] font-mono uppercase tracking-wider font-semibold">
                   印 · Chile
                 </span>
-                <span className="font-mono-tech text-xs uppercase tracking-[0.2em] text-[var(--ash)]">
+                <span className="text-xs sm:text-sm font-medium text-[var(--mist)]">
                   Páginas Web · Tiendas Online · Sistemas a Medida
                 </span>
               </div>
             </Reveal>
 
-            <Reveal delay={0.08} y={16}>
-              <h1 className="font-dela text-3xl sm:text-5xl lg:text-6xl text-[var(--bone)] tracking-tight leading-[1.08]">
-                Hacemos páginas web y sistemas para que vendas más y ordenes tu negocio.
+            <Reveal delay={0.06} y={16}>
+              <h1 className="font-dela text-2xl sm:text-4xl lg:text-5xl xl:text-6xl text-[var(--bone)] tracking-tight leading-[1.12]">
+                Hacemos páginas web y software para que vendas más y ordenes tu negocio.
               </h1>
             </Reveal>
 
-            <Reveal delay={0.14} y={16}>
-              <p className="text-base sm:text-lg text-[var(--ash)] max-w-2xl leading-relaxed">
-                Para emprendedores, profesionales, locales de barrio y negocios que quieren atender
-                mejor a sus clientes, recibir pedidos por WhatsApp o cobrar por internet sin
-                enredos. Creadores de{' '}
-                <strong className="text-[var(--bone)] font-semibold">K-Market</strong> y{' '}
-                <strong className="text-[var(--bone)] font-semibold">ProfeChileno</strong>.
+            <Reveal delay={0.12} y={16}>
+              <p className="text-sm sm:text-base lg:text-lg text-[var(--mist)] max-w-2xl leading-relaxed">
+                Para negocios, profesionales y emprendedores en Chile que necesitan recibir pedidos por WhatsApp,
+                cobrar por internet con Webpay o tener un sistema a la medida sin letras chicas.
+                Creadores de <strong className="text-[var(--bone)] font-semibold">K-Market</strong> y <strong className="text-[var(--bone)] font-semibold">ProfeChileno</strong>.
               </p>
             </Reveal>
 
-            <Reveal delay={0.2} y={16}>
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Button href="#pricing" variant="primary" size="lg">
-                  <span>Ver Precios en CLP</span>
+            <Reveal delay={0.18} y={16}>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                <Button href="#cotizador" variant="primary" size="lg" className="w-full sm:w-auto">
+                  <span>Cotizar Proyecto Online</span>
                   <ArrowRight className="w-4 h-4" />
                 </Button>
-                <Button href="#contact" variant="secondary" size="lg">
-                  <span>Cuéntanos tu Idea</span>
+                <Button href="#pricing" variant="secondary" size="lg" className="w-full sm:w-auto">
+                  <span>Ver Precios en CLP</span>
                 </Button>
               </div>
             </Reveal>
           </div>
 
-          {/* Right Signature Moment: Animated Brush-Stroke K Seal Card */}
-          <div className="lg:col-span-4">
-            <div className="sumi-card p-6 sm:p-8 rounded-[4px] relative overflow-hidden">
-              <div className="flex items-center justify-between border-b border-[var(--hairline)] pb-4 mb-6">
-                <span className="font-mono-tech text-[11px] uppercase tracking-[0.18em] text-[var(--ash)]">
-                  Trato Directo
-                </span>
-                <span className="font-kanji text-sm text-[var(--hanko)] font-bold">怪物・印</span>
-              </div>
-
-              <div className="py-4 flex items-center justify-center relative">
-                <span className="absolute inset-0 flex items-center justify-center opacity-[0.06] pointer-events-none text-[#f4f1ea]">
-                  <BrandMarkSvg className="w-44 h-44 sm:w-52 sm:h-52" />
-                </span>
-                <KaibutsuLogo
-                  className="w-36 h-36 sm:w-40 sm:h-40 text-[#f4f1ea]"
-                  animateStroke
-                />
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-[var(--hairline)] space-y-2 text-xs font-mono-tech">
-                <div className="flex justify-between text-[var(--ash)]">
-                  <span>Presupuesto</span>
-                  <span className="text-[var(--bone)]">Cerrado antes de partir</span>
-                </div>
-                <div className="flex justify-between text-[var(--ash)]">
-                  <span>Tu página</span>
-                  <span className="text-[var(--bone)]">100% a tu nombre</span>
+          {/* Right Monogram & Visual Aura */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+            <Reveal delay={0.15}>
+              <div className="relative w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:lg:h-64 flex items-center justify-center">
+                <div className="absolute inset-0 bg-radial from-[var(--hanko)]/25 to-transparent rounded-full blur-2xl pointer-events-none" />
+                <div className="relative w-full h-full p-6 rounded-3xl bg-[var(--ink-card)] border border-white/10 backdrop-blur-xl flex items-center justify-center shadow-2xl">
+                  <BrandMarkSvg className="w-28 h-28 sm:w-36 sm:h-36 text-[var(--bone)]" />
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
 
-        {/* Bottom Architectural Metrics Bar */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-b border-[var(--hairline)] divide-y sm:divide-y-0 sm:divide-x divide-[var(--hairline)] bg-[#070709]/60">
-          {HERO_METRICS.map((item) => (
-            <div key={item.label} className="p-5 sm:p-6 space-y-1">
-              <div className="font-mono-tech text-xl sm:text-2xl font-bold text-[var(--bone)]">
-                {item.value}
+        {/* Ergonomic Metrics Pills (Responsive Bento Grid) */}
+        <Reveal delay={0.24}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 pt-4 border-t border-[var(--hairline)]">
+            {HERO_METRICS.map((metric) => (
+              <div
+                key={metric.value}
+                className="p-4 sm:p-5 rounded-2xl bg-[var(--ink-card)] border border-[var(--hairline)] backdrop-blur-md transition-all hover:border-[var(--hairline-strong)]"
+              >
+                <div className="text-base sm:text-xl font-bold font-serif text-[var(--bone)] mb-1">
+                  {metric.value}
+                </div>
+                <div className="text-xs text-[var(--mist)] leading-snug">
+                  {metric.label}
+                </div>
               </div>
-              <div className="text-xs text-[var(--ash)]">{item.label}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

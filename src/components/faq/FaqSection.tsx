@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Section from '@/components/ui/Section';
+import { ChevronDown } from 'lucide-react';
 
 interface FaqItem {
   q: string;
@@ -41,7 +42,7 @@ export default function FaqSection() {
   return (
     <Section
       id="faq"
-      index="06"
+      index="05"
       eyebrow="Claridad y Confianza"
       title="Preguntas Frecuentes y Garantías Comerciales"
       subtitle="Todo lo que necesitas saber antes de iniciar tu proyecto con nosotros en Chile."
@@ -53,22 +54,32 @@ export default function FaqSection() {
           return (
             <div
               key={index}
-              className="border border-[var(--ink-border)] rounded-lg bg-[var(--ink-card)] overflow-hidden transition-colors"
+              className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                isOpen
+                  ? 'border-[var(--hairline-strong)] bg-[var(--ink-card)] shadow-lg'
+                  : 'border-[var(--hairline)] bg-[var(--ink-card)]/50 hover:border-white/20'
+              }`}
             >
               <button
                 type="button"
                 onClick={() => toggle(index)}
-                className="w-full text-left p-5 flex items-center justify-between gap-4 hover:bg-[var(--ink-surface)]/50 transition-colors"
+                className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer"
               >
-                <span className="font-serif font-bold text-base text-[var(--bone)]">
+                <span className="font-serif font-bold text-base sm:text-lg text-[var(--bone)]">
                   {item.q}
                 </span>
-                <span className="font-mono text-sm text-[var(--gold)] flex-shrink-0">
-                  {isOpen ? '−' : '+'}
-                </span>
+                <div
+                  className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-transform duration-200 ${
+                    isOpen
+                      ? 'rotate-180 bg-[var(--hanko)] text-white border-[var(--hanko)]'
+                      : 'border-white/10 text-[var(--mist)]'
+                  }`}
+                >
+                  <ChevronDown className="w-4 h-4" />
+                </div>
               </button>
               {isOpen && (
-                <div className="px-5 pb-5 pt-1 text-sm text-[var(--mist)] leading-relaxed border-t border-[var(--ink-border)]/40">
+                <div className="px-5 sm:px-6 pb-6 pt-1 text-sm text-[var(--mist)] leading-relaxed border-t border-[var(--hairline)]">
                   {item.a}
                 </div>
               )}

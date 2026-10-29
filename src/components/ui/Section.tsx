@@ -29,9 +29,9 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`relative py-24 sm:py-28 px-4 sm:px-6 lg:px-8 border-t border-[var(--hairline)] overflow-hidden ${className}`}
+      className={`relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-[var(--hairline)] overflow-hidden ${className}`}
     >
-      {/* Optional Sumi-e Atmospheric Scene */}
+      {/* Optional Atmospheric Scene Backdrop */}
       {sceneSrc && (
         <div className="absolute inset-0 pointer-events-none select-none z-0">
           <Image
@@ -39,46 +39,50 @@ export default function Section({
             alt={sceneAlt}
             fill
             sizes="100vw"
-            className="object-cover object-center opacity-70"
+            className="object-cover object-center opacity-60 sm:opacity-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--ink-bg)] via-[#070709]/75 to-[var(--ink-bg)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--ink-bg)] via-[#070709]/80 to-[var(--ink-bg)]" />
         </div>
       )}
 
-      {/* Optional Subtle Kanji Watermark */}
+      {/* Monumental Kanji Watermark */}
       {kanjiWatermark && (
         <div
           aria-hidden="true"
-          className="absolute top-12 right-6 sm:right-12 pointer-events-none select-none z-0"
+          className="absolute -top-8 sm:top-4 right-2 sm:right-8 pointer-events-none select-none z-0"
         >
-          <span className="kanji-watermark text-[13vw] sm:text-[10vw] font-bold block">
+          <span className="kanji-watermark text-[36vw] sm:text-[20vw] font-bold block opacity-15 sm:opacity-25">
             {kanjiWatermark}
           </span>
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto relative z-10 space-y-14">
-        {(eyebrow || title) && (
-          <header className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end border-b border-[var(--hairline)] pb-8">
-            <div className="lg:col-span-7 space-y-3">
-              {eyebrow && (
-                <div className="font-mono-tech text-xs uppercase tracking-[0.2em] text-[var(--hanko)]">
-                  {index ? `${index} · ` : ''}
+      <div className="max-w-7xl mx-auto relative z-10 space-y-8 sm:space-y-12">
+        {(eyebrow || title || subtitle) && (
+          <div className="max-w-3xl space-y-3 sm:space-y-4">
+            {eyebrow && (
+              <div className="flex items-center gap-2.5">
+                {index && (
+                  <span className="font-mono text-xs font-bold text-[var(--hanko)]">
+                    {index}
+                  </span>
+                )}
+                <span className="hanko-seal px-2.5 py-0.5 text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-semibold">
                   {eyebrow}
-                </div>
-              )}
-              {title && (
-                <h2 className="font-dela text-2xl sm:text-4xl text-[var(--bone)] tracking-tight leading-[1.15]">
-                  {title}
-                </h2>
-              )}
-            </div>
+                </span>
+              </div>
+            )}
+            {title && (
+              <h2 className="font-dela text-2xl sm:text-3xl lg:text-4xl text-[var(--bone)] tracking-tight leading-[1.15]">
+                {title}
+              </h2>
+            )}
             {subtitle && (
-              <p className="lg:col-span-5 text-sm sm:text-base text-[var(--ash)] leading-relaxed">
+              <p className="text-sm sm:text-base text-[var(--mist)] leading-relaxed">
                 {subtitle}
               </p>
             )}
-          </header>
+          </div>
         )}
 
         {children}
