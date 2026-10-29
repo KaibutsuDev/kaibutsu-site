@@ -8,32 +8,39 @@ export default function ProcessSection() {
     <Section
       id="process"
       index="04"
-      eyebrow="Cómo Trabajamos"
-      title="Cuatro pasos simples desde tu idea hasta publicar"
-      subtitle="Sin tecnicismos ni meses de espera sin saber qué pasa. Desde la primera semana puedes ver los avances directamente en tu celular."
+      eyebrow="Flujo de Trabajo"
+      title="Cómo construimos tu proyecto: Transparencia paso a paso"
+      subtitle="Trabajamos con plazos reales, metodología rigurosa y sin apuros que comprometan la calidad. Sabes en todo momento qué estamos construyendo y puedes auditar avances en tiempo real."
       kanjiWatermark="道"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {PROCESS_STEPS.map((step, idx) => (
           <Reveal key={step.index} delay={idx * 0.06} className="flex">
-            <div className="sumi-card rounded-[4px] p-6 sm:p-7 flex flex-col justify-between w-full">
+            <div className="sumi-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between w-full relative overflow-hidden group hover:border-[#c8102e]/50">
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-[var(--hairline)] pb-3 font-mono-tech text-xs">
-                  <span className="text-[var(--hanko)] font-bold">PASO {step.index}</span>
-                  <span className="text-[var(--ash)]">{step.duration}</span>
+                <div className="flex items-center justify-between border-b border-white/10 pb-3 text-xs">
+                  <span className="font-mono font-bold text-[#ff4d6d]">
+                    ETAPA {step.index}
+                  </span>
+                  <span className="font-mono text-[var(--gold)] font-medium">
+                    {step.duration}
+                  </span>
                 </div>
 
-                <h3 className="font-dela text-lg text-[var(--bone)]">{step.title}</h3>
-                <p className="text-xs sm:text-sm text-[var(--ash)] leading-relaxed">
+                <h3 className="font-heading font-bold text-lg sm:text-xl text-[var(--bone)]">
+                  {step.title}
+                </h3>
+                
+                <p className="text-xs sm:text-sm text-[var(--mist)] leading-relaxed">
                   {step.description}
                 </p>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-[var(--hairline)]">
-                <span className="block font-mono-tech text-[10px] uppercase tracking-wider text-[var(--ash)]">
-                  Qué recibes
+              <div className="pt-4 mt-6 border-t border-white/10">
+                <span className="block text-[11px] font-mono uppercase tracking-wider text-[var(--mist)] mb-1">
+                  Qué entregamos en esta etapa:
                 </span>
-                <span className="font-mono-tech text-xs font-semibold text-[var(--bone)]">
+                <span className="text-xs font-semibold text-[var(--bone)] block">
                   {step.deliverable}
                 </span>
               </div>

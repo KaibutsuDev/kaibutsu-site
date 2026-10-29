@@ -11,24 +11,28 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    q: '¿Quién es el dueño legal del código fuente y del dominio?',
-    a: 'Tú eres el dueño absoluto del 100% del código fuente, diseño, bases de datos y accesos. Una vez finalizado el proyecto, te entregamos el repositorio y las credenciales maestras sin letras chicas ni cláusulas de cautiverio.',
+    q: '¿Cuáles son los plazos reales de entrega?',
+    a: 'Nos tomamos el tiempo necesario para construir software robusto y no algo hecho a la rápida. Una página web corporativa toma de 2 a 3 semanas. Una tienda online con catálogo y pagos chilenos toma de 4 a 6 semanas. Un sistema a medida o SaaS se construye entre 6 a 10 semanas, entregando un MVP funcional intermedio para que pruebes el flujo antes del cierre.',
   },
   {
-    q: '¿Cuáles son los tiempos reales de entrega?',
-    a: 'Una página web corporativa o de presencia toma entre 7 a 14 días hábiles. Una tienda online con catálogo y Webpay toma de 2 a 3 semanas. Los sistemas a medida complejos se estructuran en entregas continuas cada 10 días.',
+    q: '¿Cómo puedo revisar los avances durante el desarrollo?',
+    a: 'Al iniciar el proyecto te entregamos credenciales de acceso a un dashboard privado de cliente. Desde allí puedes auditar el estado en tiempo real, revisar los componentes construidos y realizar consultas o solicitudes de cambio.',
   },
   {
-    q: '¿Cómo funciona la modalidad de pago?',
-    a: 'Trabajamos con un 50% de anticipo al firmar la propuesta técnica y el 50% restante contra entrega y verificación en tu dominio final. Emitimos factura comercial o boleta de honorarios conforme al SII.',
+    q: '¿Quién es el dueño del código fuente y de las credenciales?',
+    a: 'Finalizado el proyecto y conforme a lo pactado en el contrato de trabajo, se entrega el código fuente completo del software. Respecto a las credenciales (base de datos, auth, servidor, correos transaccionales), tú decides si recibes las llaves maestras para administrarlas por vía propia o si delegas la mantención técnica a Kaibutsu.',
   },
   {
-    q: '¿Qué garantía incluye el proyecto?',
-    a: 'Todos los proyectos incluyen 30 días de garantía técnica posterior al lanzamiento para corrección sin costo de cualquier fallo o duda operativa.',
+    q: '¿Cómo funciona el servicio de mantención mensual o anual?',
+    a: 'Si prefieres que nosotros nos encarguemos de la estabilidad, respaldos, actualizaciones de seguridad y monitoreo de servidores, generamos un contrato anexo individual que detalla todos los servicios incluidos y fija un valor mensual o anual transparente.',
   },
   {
-    q: '¿Por qué no usan plantillas genéricas de WordPress?',
-    a: 'Construimos con código moderno (Next.js, React, Tailwind y bases de datos en la nube). Esto garantiza que tu sitio cargue en menos de 1 segundo, no sea vulnerable a hackeos por plugins obsoletos y logre puntajes superiores en Google (SEO).',
+    q: '¿Qué ocurre si necesito agregar funciones que no estaban en el contrato?',
+    a: 'Cualquier requerimiento nuevo que surja durante la revisión del MVP funcional o desde tu dashboard será evaluado de forma clara. Si implica un retraso en los tiempos originales o una complejidad técnica adicional, se cotiza de forma independiente con un anexo de alcance.',
+  },
+  {
+    q: '¿Cuál es la modalidad de pago y formalización?',
+    a: 'Trabajamos bajo contrato de prestación de servicios con factura comercial o boleta. El proyecto inicia una vez recibido el 50% de anticipo acordado, y el 50% restante se liquida contra la entrega final tras realizar las pruebas de funcionamiento en tiempo real.',
   },
 ];
 
@@ -44,8 +48,8 @@ export default function FaqSection() {
       id="faq"
       index="05"
       eyebrow="Claridad y Confianza"
-      title="Preguntas Frecuentes y Garantías Comerciales"
-      subtitle="Todo lo que necesitas saber antes de iniciar tu proyecto con nosotros en Chile."
+      title="Preguntas Frecuentes y Metodología de Trabajo"
+      subtitle="Todo lo que necesitas saber sobre plazos reales, seguimiento en vivo, código fuente y mantención."
       kanjiWatermark="問"
     >
       <div className="max-w-3xl mx-auto space-y-3">
@@ -56,8 +60,8 @@ export default function FaqSection() {
               key={index}
               className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                 isOpen
-                  ? 'border-[var(--hairline-strong)] bg-[var(--ink-card)] shadow-lg'
-                  : 'border-[var(--hairline)] bg-[var(--ink-card)]/50 hover:border-white/20'
+                  ? 'border-white/20 bg-[var(--ink-card)] shadow-lg'
+                  : 'border-[var(--hairline)] bg-[var(--ink-card)]/50 hover:border-white/15'
               }`}
             >
               <button
@@ -65,7 +69,7 @@ export default function FaqSection() {
                 onClick={() => toggle(index)}
                 className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer"
               >
-                <span className="font-serif font-bold text-base sm:text-lg text-[var(--bone)]">
+                <span className="font-heading font-bold text-base sm:text-lg text-[var(--bone)]">
                   {item.q}
                 </span>
                 <div
@@ -79,7 +83,7 @@ export default function FaqSection() {
                 </div>
               </button>
               {isOpen && (
-                <div className="px-5 sm:px-6 pb-6 pt-1 text-sm text-[var(--mist)] leading-relaxed border-t border-[var(--hairline)]">
+                <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[var(--mist)] leading-relaxed border-t border-[var(--hairline)]">
                   {item.a}
                 </div>
               )}

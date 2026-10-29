@@ -1,9 +1,9 @@
-import type { Metadata, Route } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Términos y Condiciones del Servicio | Kaibutsu 怪物',
   description:
-    'Términos legales, condiciones de contratación, propiedad intelectual y garantías de entrega para servicios web y software a medida prestados por Kaibutsu en Chile.',
+    'Términos legales, condiciones de contratación, propiedad intelectual, gestión de credenciales y garantías de entrega para servicios web y software a medida prestados por Kaibutsu en Chile.',
 };
 
 export default function TerminosPage() {
@@ -22,7 +22,7 @@ export default function TerminosPage() {
       </div>
 
       <div className="space-y-8 text-sm sm:text-base leading-relaxed text-[var(--bone)]/90">
-        <section className="bg-[var(--ink-card)] p-6 rounded-lg border border-[var(--ink-border)]">
+        <section className="bg-[var(--ink-card)] p-6 rounded-2xl border border-[var(--ink-border)]">
           <h2 className="text-lg font-serif font-bold text-[var(--gold)] mb-3">
             1. Individualización del Prestador
           </h2>
@@ -30,70 +30,83 @@ export default function TerminosPage() {
             Los servicios tecnológicos, desarrollo web, comercio electrónico y sistemas de software ofrecidos bajo la marca <strong>Kaibutsu 怪物</strong> son administrados y representados legalmente por <strong>Roberto Ignacio Antonio González González</strong>, Cédula Nacional de Identidad N° <strong>19.542.218-4</strong>, con domicilio comercial en Santiago, Chile.
           </p>
           <p className="mt-2 text-xs text-[var(--mist)] font-mono">
-            Contacto legal directo: contacto@kaibutsu.cl · +56 9 3952 6626
+            Contacto legal directo: contacto@kaibutsu.cl · +56 9 3654 9761
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-serif font-bold mb-3 text-[var(--bone)]">
-            2. Alcance del Servicio y Presupuestos
+            2. Proceso de Contratación, Presupuestos y Anticipo (50%)
           </h2>
           <p>
-            Toda propuesta técnica o económica generada a través de nuestros canales oficiales o cotizadores web detalla de forma explícita el alcance funcional, hitos de entrega y valores netos expresados en pesos chilenos (CLP).
+            Todo proyecto inicia con una entrevista sobre marca, producto, paleta de colores y levantamiento técnico exhaustivo de requerimientos. Con dicha base se formaliza el contrato de trabajo con alcance, plazos de entrega y valores netos en pesos chilenos (CLP).
           </p>
           <p className="mt-2">
-            Salvo estipulación expresa en contrario, los valores pactados no incluyen el Impuesto al Valor Agregado (IVA) correspondiente a la emisión de factura comercial o boleta de honorarios conforme a la normativa tributaria del Servicio de Impuestos Internos (SII).
+            La construcción del software da inicio una vez acreditado el <strong>50% de anticipo</strong> estipulado. El 50% restante se cancela contra la entrega definitiva tras la verificación exitosa de pruebas en tiempo real.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-serif font-bold mb-3 text-[var(--bone)]">
-            3. Propiedad Intelectual y Código Fuente
+            3. Dashboard de Cliente, Entrega de MVP y Control de Cambios
           </h2>
           <p>
-            En Kaibutsu creemos en la soberanía tecnológica de nuestros clientes:
+            Para garantizar máxima transparencia:
           </p>
           <ul className="list-disc pl-5 mt-2 space-y-2">
             <li>
-              <strong>Traspaso del 100% de la Propiedad:</strong> Una vez completado el pago total pactado del proyecto, el cliente recibe la titularidad íntegra sobre el código fuente a medida desarrollado, base de datos y contenidos.
+              <strong>Credenciales de Seguimiento:</strong> Se entregan credenciales privadas al cliente para ingresar a un panel donde puede revisar en tiempo real el avance de la obra digital.
             </li>
             <li>
-              <strong>Sin Cautiverio ni Dependencias Forzadas:</strong> No amarramos al cliente a plataformas cerradas. El cliente es libre de hospedar, auditar o transferir su software a la infraestructura o equipo técnico que estime conveniente.
+              <strong>Entrega de MVP Funcional:</strong> Se entrega un modelo y esquema funcional intermedio para verificar que la arquitectura resuelve la necesidad operativa real antes del cierre.
             </li>
             <li>
-              <strong>Sistemas Propios SaaS:</strong> En el caso de suscripciones o uso de plataformas propietarias (como K-Market), el cliente conserva la propiedad total de sus datos comerciales, productos y bases de clientes, rigiéndose por los términos específicos del servicio SaaS.
+              <strong>Nuevos Requerimientos:</strong> Toda solicitud nueva o cambio de alcance que no haya sido contemplado en el contrato inicial y que represente una demora o trabajo adicional será valorizado de forma independiente y podrá generar costos adicionales transparentes.
             </li>
           </ul>
         </section>
 
         <section>
           <h2 className="text-xl font-serif font-bold mb-3 text-[var(--bone)]">
-            4. Modalidad de Pago e Hitos de Entrega
+            4. Propiedad Intelectual y Entrega de Código Fuente
           </h2>
           <p>
-            Para resguardar a ambas partes, los proyectos a medida se estructuran bajo modalidad de anticipo y liquidación contra entrega:
+            Concluido el proyecto y verificado el pago íntegro pactado, se realiza la entrega formal del código fuente completo al cliente, siempre y cuando haya sido convenido y estipulado en el contrato de prestación de servicios.
           </p>
-          <ul className="list-disc pl-5 mt-2 space-y-1">
-            <li><strong>50% de Anticipo:</strong> Para reserva de capacidad, arquitectura inicial y diseño de interfaz.</li>
-            <li><strong>50% Contra Entrega y Aprobación:</strong> Previo al despliegue en el dominio definitivo y entrega de credenciales maestras.</li>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-serif font-bold mb-3 text-[var(--bone)]">
+            5. Gestión de Credenciales y Opciones de Mantención (Propia vs Delegada)
+          </h2>
+          <p>
+            El control y administración de las credenciales de infraestructura (bases de datos en la nube, autenticación, servidores de despliegue, pasarelas de correos transaccionales y APIs):
+          </p>
+          <ul className="list-disc pl-5 mt-2 space-y-2">
+            <li>
+              <strong>Vía Propia:</strong> El cliente puede optar por recibir todas las credenciales maestras y asumir de forma autónoma el costo de consumo y la mantención técnica de dichos proveedores.
+            </li>
+            <li>
+              <strong>Mantención Delegada por Kaibutsu:</strong> Si el cliente prefiere que Kaibutsu administre la infraestructura, respaldos y estabilidad, se suscribe un contrato anexo individual que agrupa los servicios involucrados y establece un arancel mensual o anual acordado.
+            </li>
           </ul>
         </section>
 
         <section>
           <h2 className="text-xl font-serif font-bold mb-3 text-[var(--bone)]">
-            5. Garantía de Funcionamiento y Soporte Técnico
+            6. Garantía de Funcionamiento y Soporte Técnico
           </h2>
           <p>
-            Todo proyecto entregado cuenta con una <strong>garantía técnica de 30 días corridos</strong> sin costo adicional a partir de la fecha de puesta en marcha. Dicha garantía cubre la corrección inmediata de cualquier fallo de programación (bugs) o desviación respecto a las especificaciones acordadas.
+            Todo software entregado cuenta con una <strong>garantía técnica de 30 días corridos</strong> sin costo adicional a partir de la fecha de puesta en marcha. Dicha garantía cubre la corrección inmediata de errores de código (bugs) o desviaciones respecto a las especificaciones contractuales.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-serif font-bold mb-3 text-[var(--bone)]">
-            6. Legislación Aplicable y Jurisdicción
+            7. Legislación Aplicable y Jurisdicción
           </h2>
           <p>
-            Los presentes términos se rigen por las leyes vigentes de la República de Chile. Para cualquier controversia o interpretación judicial, las partes se someten a la competencia de los Tribunales Ordinarios de Justicia de la ciudad de Santiago.
+            Los presentes términos se rigen por las leyes de la República de Chile. Cualquier controversia técnica o legal se somete a la jurisdicción de los Tribunales Ordinarios de Justicia de la ciudad de Santiago.
           </p>
         </section>
       </div>
