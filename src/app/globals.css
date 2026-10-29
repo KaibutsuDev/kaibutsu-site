@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --ink-bg: #070709;
+  --ink-surface: #0d0e13;
+  --ink-elevated: #12141c;
+  --bone: #f4f1ea;
+  --ash: #9ca3af;
+  --ash-muted: #6b7280;
+  --hanko: #c8102e;
+  --hanko-hover: #df1637;
+  --hairline: rgba(244, 241, 234, 0.09);
+  --hairline-strong: rgba(244, 241, 234, 0.18);
+}
+
+body {
+  background-color: var(--ink-bg);
+  color: var(--bone);
+  overflow-x: hidden;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background: var(--hanko);
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #1f222e;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hanko);
+}
+
+/* Typography Utilities */
+.font-dela {
+  font-family: var(--font-dela), sans-serif;
+}
+
+.font-kanji {
+  font-family: var(--font-kanji), 'Shippori Mincho', serif;
+}
+
+.kanji-watermark {
+  font-family: var(--font-kanji), 'Shippori Mincho', serif;
+  color: #f4f1ea;
+  opacity: 0.032;
+  user-select: none;
+  pointer-events: none;
+  line-height: 0.9;
+}
+
+.font-mono-tech {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+/* Washi & Sumi-e Editorial Surfaces */
+.sumi-card {
+  background-color: rgba(13, 14, 19, 0.88);
+  border: 1px solid var(--hairline);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.sumi-card:hover {
+  border-color: var(--hairline-strong);
+  background-color: rgba(18, 20, 28, 0.94);
+}
+
+/* Hanko Stamp Border */
+.hanko-seal {
+  border: 1px solid rgba(200, 16, 46, 0.55);
+  color: #f87171;
+  background-color: rgba(200, 16, 46, 0.08);
+}
+
+/* Subtle SVG Washi Paper Grain Overlay */
+.washi-grain {
+  background-image: radial-gradient(rgba(244, 241, 234, 0.035) 1px, transparent 0);
+  background-size: 24px 24px;
+}
