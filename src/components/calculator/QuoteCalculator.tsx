@@ -37,7 +37,7 @@ export default function QuoteCalculator() {
       .join(', ');
 
     const text = `Hola Kaibutsu, estuve usando el cotizador en kaibutsu.cl.\n\nMe interesa:\n- Solución: ${selectedService.name}\n- Módulos opcionales: ${addonNames || 'Ninguno'}\n- Estimado: ${formatCLP(totalEstimate)} + IVA\n\n¿Podemos coordinar una reunión o propuesta formal?`;
-    return `https://wa.me/56939526626?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/56936549761?text=${encodeURIComponent(text)}`;
   };
 
   return (

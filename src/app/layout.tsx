@@ -1,27 +1,30 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Dela_Gothic_One, Shippori_Mincho } from 'next/font/google';
+import { Inter, Outfit, Geist_Mono, Shippori_Mincho } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  variable: '--font-outfit',
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
-});
-
-const delaGothic = Dela_Gothic_One({
-  weight: '400',
-  variable: '--font-dela',
-  subsets: ['latin'],
+  display: 'swap',
 });
 
 const shipporiMincho = Shippori_Mincho({
   weight: ['700', '800'],
   variable: '--font-kanji',
   subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -41,8 +44,8 @@ export const metadata: Metadata = {
     'k-market',
     'kaibutsu',
   ],
-  authors: [{ name: 'Roberto Ignacio Antonio González González', url: 'https://kaibutsu.cl' }],
-  creator: 'Roberto Ignacio Antonio González González',
+  authors: [{ name: 'KaibutsuDev', url: 'https://github.com/KaibutsuDev' }],
+  creator: 'Kaibutsu 怪物',
   publisher: 'Kaibutsu 怪物',
   formatDetection: {
     email: false,
@@ -81,8 +84,6 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'Kaibutsu 怪物',
-    legalName: 'Roberto Ignacio Antonio González González',
-    taxID: '19.542.218-4',
     url: 'https://kaibutsu.cl',
     logo: 'https://kaibutsu.cl/favicon.ico',
     description:
@@ -93,14 +94,10 @@ export default function RootLayout({
       addressRegion: 'Región Metropolitana',
       addressCountry: 'CL',
     },
-    founder: {
-      '@type': 'Person',
-      name: 'Roberto Ignacio Antonio González González',
-      jobTitle: 'Fundador y Desarrollador Principal',
-    },
-    telephone: '+56939526626',
+    telephone: '+56936549761',
     email: 'contacto@kaibutsu.cl',
     priceRange: '$$',
+    sameAs: ['https://github.com/KaibutsuDev'],
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -114,7 +111,7 @@ export default function RootLayout({
   return (
     <html
       lang="es-CL"
-      className={`${geistSans.variable} ${geistMono.variable} ${delaGothic.variable} ${shipporiMincho.variable} dark scroll-smooth`}
+      className={`${inter.variable} ${outfit.variable} ${geistMono.variable} ${shipporiMincho.variable} dark scroll-smooth`}
     >
       <head>
         <script

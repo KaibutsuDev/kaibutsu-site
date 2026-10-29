@@ -2,27 +2,34 @@
 
 :root {
   --ink-bg: #070709;
-  --ink-surface: #0e0f14;
-  --ink-elevated: #151720;
-  --bone: #f4f1ea;
-  --ash: #9ca3af;
-  --ash-muted: #6b7280;
+  --ink-surface: #0c0d12;
+  --ink-elevated: #13141c;
+  --crimson-glow: #8b0a1d;
+  --crimson-deep: #42040d;
   --hanko: #c8102e;
-  --hanko-hover: #e01b3b;
-  --gold: #d4af37;
-  --gold-muted: rgba(212, 175, 55, 0.2);
-  --hairline: rgba(244, 241, 234, 0.08);
-  --hairline-strong: rgba(244, 241, 234, 0.16);
-  --ink-border: rgba(244, 241, 234, 0.1);
-  --ink-card: rgba(17, 19, 26, 0.75);
+  --hanko-hover: #e51739;
+  --bone: #f8fafc;
+  --bone-muted: #cbd5e1;
+  --mist: #94a3b8;
+  --mist-dark: #64748b;
+  --gold: #f59e0b;
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-strong: rgba(255, 255, 255, 0.16);
+  --hairline-glow: rgba(200, 16, 46, 0.4);
+  --ink-card: rgba(14, 15, 22, 0.72);
 }
 
 body {
   background-color: var(--ink-bg);
   color: var(--bone);
   overflow-x: hidden;
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(139, 10, 29, 0.38) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 90% 25%, rgba(66, 4, 13, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 10% 70%, rgba(139, 10, 29, 0.22) 0%, transparent 60%);
+  background-attachment: fixed;
 }
 
 ::selection {
@@ -38,7 +45,7 @@ body {
   background: var(--ink-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f222e;
+  background: #252836;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -46,8 +53,14 @@ body {
 }
 
 /* Typography Utilities */
+.font-heading {
+  font-family: var(--font-outfit), sans-serif;
+  letter-spacing: -0.025em;
+}
+
 .font-dela {
-  font-family: var(--font-dela), sans-serif;
+  font-family: var(--font-outfit), sans-serif;
+  letter-spacing: -0.025em;
 }
 
 .font-kanji {
@@ -56,8 +69,8 @@ body {
 
 .kanji-watermark {
   font-family: var(--font-kanji), 'Shippori Mincho', serif;
-  color: #f4f1ea;
-  opacity: 0.035;
+  color: #f8fafc;
+  opacity: 0.028;
   user-select: none;
   pointer-events: none;
   line-height: 0.9;
@@ -67,42 +80,28 @@ body {
   font-family: var(--font-geist-mono), monospace;
 }
 
-/* Washi & Sumi-e Surfaces with Organic Glass Depth */
+/* Cyber-Samurai Card Surfaces with Crimson Glass */
 .sumi-card {
-  background: linear-gradient(180deg, rgba(21, 23, 32, 0.82) 0%, rgba(13, 14, 19, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(20, 22, 32, 0.8) 0%, rgba(10, 11, 17, 0.9) 100%);
   border: 1px solid var(--hairline);
-  backdrop-filter: blur(12px);
-  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .sumi-card:hover {
-  border-color: var(--hairline-strong);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-color: var(--hairline-glow);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -4px rgba(200, 16, 46, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Hanko Seal Pill (Soft Organic Japanese Stamp) */
+/* Katana Pill / Hanko Stamp */
 .hanko-seal {
-  border: 1px solid rgba(200, 16, 46, 0.45);
+  border: 1px solid rgba(200, 16, 46, 0.5);
   color: #fca5a5;
-  background: rgba(200, 16, 46, 0.12);
+  background: linear-gradient(135deg, rgba(200, 16, 46, 0.22) 0%, rgba(66, 4, 13, 0.35) 100%);
   border-radius: 9999px;
-  backdrop-filter: blur(8px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-/* Washi Texture Overlay */
-.washi-grain {
-  position: relative;
-}
-.washi-grain::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.025;
-  background-image: radial-gradient(#f4f1ea 1px, transparent 1px);
-  background-size: 24px 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(200, 16, 46, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }

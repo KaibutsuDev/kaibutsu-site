@@ -18,38 +18,42 @@ export default function ContactSection() {
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <Reveal className="lg:col-span-7">
-          <div className="sumi-card rounded-[4px] p-6 sm:p-10">
+          <div className="sumi-card rounded-2xl p-6 sm:p-10">
             <ContactForm />
           </div>
         </Reveal>
 
         <Reveal delay={0.08} className="lg:col-span-5 space-y-6">
-          <div className="sumi-card rounded-[4px] p-6 sm:p-8 space-y-6">
+          <div className="sumi-card rounded-2xl p-6 sm:p-8 space-y-6">
             <div className="space-y-2 border-b border-[var(--hairline)] pb-4">
-              <span className="hanko-seal px-2 py-0.5 rounded-[3px] font-mono-tech text-[10px] uppercase tracking-wider">
+              <span className="hanko-seal px-3 py-1 text-[11px] font-mono uppercase tracking-wider font-semibold">
                 Trato Directo
               </span>
-              <h3 className="font-dela text-lg text-[var(--bone)] pt-1">
+              <h3 className="font-heading font-bold text-xl text-[var(--bone)] pt-1">
                 Hablas directo con quienes hacen tu página
               </h3>
-              <p className="text-xs sm:text-sm text-[var(--ash)] leading-relaxed">
-                Sin vendedores entre medio ni letra chica. Te explicamos todo en simple desde el
-                primer mensaje para que elijas lo que de verdad te sirve.
+              <p className="text-xs sm:text-sm text-[var(--mist)] leading-relaxed">
+                Sin intermediarios ni letra chica. Te explicamos todo en simple desde el
+                primer mensaje para que elijas lo que de verdad le sirve a tu negocio.
               </p>
             </div>
 
-            <div className="space-y-3 font-mono-tech text-xs">
+            <div className="space-y-3 text-xs">
               <div className="flex justify-between py-2 border-b border-[var(--hairline)]">
-                <span className="text-[var(--ash)]">Tiempo de respuesta</span>
-                <span className="text-[var(--bone)]">Dentro del mismo día</span>
+                <span className="text-[var(--mist)]">Tiempo de respuesta</span>
+                <span className="text-[var(--bone)] font-medium">Dentro del mismo día</span>
               </div>
               <div className="flex justify-between py-2 border-b border-[var(--hairline)]">
-                <span className="text-[var(--ash)]">Primera conversación</span>
-                <span className="text-[var(--bone)]">Gratis y sin compromiso</span>
+                <span className="text-[var(--mist)]">Primera conversación</span>
+                <span className="text-[var(--bone)] font-medium">Gratis y sin compromiso</span>
+              </div>
+              <div className="flex justify-between py-2 border-b border-[var(--hairline)]">
+                <span className="text-[var(--mist)]">WhatsApp directo</span>
+                <span className="text-[var(--bone)] font-mono font-medium">+56 9 3654 9761</span>
               </div>
               <div className="flex justify-between py-2">
-                <span className="text-[var(--ash)]">Ubicación</span>
-                <span className="text-[var(--bone)]">Santiago / Valparaíso, Chile</span>
+                <span className="text-[var(--mist)]">Ubicación</span>
+                <span className="text-[var(--bone)] font-medium">Santiago / Valparaíso, Chile</span>
               </div>
             </div>
 

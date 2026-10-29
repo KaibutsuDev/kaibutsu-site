@@ -19,19 +19,19 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-[#070709]/80 backdrop-blur-xl border-b border-[var(--hairline)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
+    <header className="fixed top-0 inset-x-0 z-50 py-4 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto h-16 px-5 sm:px-6 rounded-2xl bg-[#0c0d14]/75 backdrop-blur-2xl border border-white/10 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.08)]">
         <Link href="/" className="flex items-center gap-3 text-[var(--bone)] hover:opacity-90 transition-opacity">
           <KaibutsuLogo className="w-8 h-8 sm:w-9 sm:h-9 text-[var(--bone)]" showWordmark />
         </Link>
 
-        {/* Desktop Links */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-[var(--mist)]">
+        {/* Desktop Links (Clean subtle typography like reference) */}
+        <nav className="hidden md:flex items-center gap-7 text-xs sm:text-sm font-medium tracking-wide text-[var(--mist)]">
           {NAV_LINKS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="hover:text-[var(--bone)] transition-colors py-1"
+              className="hover:text-white transition-colors py-1"
             >
               {item.label}
             </Link>
@@ -39,16 +39,16 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button href="/#cotizador" variant="primary" size="sm">
-            <span>Cotizar Online</span>
+          <Button href="/#cotizador" variant="katana" size="sm">
+            <span>CONTACTAR</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Button>
         </div>
 
-        {/* Mobile Hamburger Button with rounded glass pill */}
+        {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2.5 rounded-xl border border-white/10 bg-white/[0.04] text-[var(--bone)] active:scale-95 transition-all"
+          className="md:hidden p-2.5 rounded-xl border border-white/12 bg-white/[0.04] text-[var(--bone)] active:scale-95 transition-all"
           aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -57,8 +57,8 @@ export default function Navbar() {
 
       {/* Modern Floating Mobile Drawer */}
       {isOpen && (
-        <div className="md:hidden px-4 pt-2 pb-6 bg-[#070709]/95 backdrop-blur-2xl border-b border-[var(--hairline-strong)] animate-in fade-in slide-in-from-top-2 duration-200">
-          <div className="space-y-1 py-2">
+        <div className="md:hidden mt-2 p-5 rounded-2xl bg-[#0c0d14]/95 backdrop-blur-2xl border border-white/12 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="space-y-1 py-1">
             {NAV_LINKS.map((item) => (
               <Link
                 key={item.href}
@@ -70,15 +70,15 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <div className="pt-3 border-t border-[var(--hairline)]">
+          <div className="pt-3 mt-2 border-t border-white/10">
             <Button
               href="/#cotizador"
-              variant="primary"
+              variant="katana"
               size="md"
               className="w-full justify-center"
               onClick={() => setIsOpen(false)}
             >
-              <span>Cotizar Proyecto Online</span>
+              <span>CONTACTAR</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>

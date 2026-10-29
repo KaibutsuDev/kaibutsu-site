@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import { useReducedMotion } from 'motion/react';
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'gold';
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'katana' | 'gold';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps {
@@ -21,19 +21,21 @@ interface ButtonProps {
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary:
-    'bg-[var(--hanko)] hover:bg-[var(--hanko-hover)] text-white shadow-[0_4px_16px_rgba(200,16,46,0.35),inset_0_1px_0_rgba(255,255,255,0.25)] border border-[#ff3355]/40',
+    'bg-gradient-to-r from-[#9b1126] via-[#c8102e] to-[#7f0b1d] hover:from-[#b5142f] hover:to-[#9b1126] text-white shadow-[0_4px_24px_rgba(200,16,46,0.45),inset_0_1px_0_rgba(255,255,255,0.3)] border border-[#ff3b5c]/40',
+  katana:
+    'bg-gradient-to-r from-[#171a25]/90 via-[#221018]/90 to-[#171a25]/90 hover:border-[#c8102e]/60 text-white border border-white/15 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_4px_24px_rgba(200,16,46,0.35)]',
   secondary:
-    'bg-white/[0.05] hover:bg-white/[0.1] text-[var(--bone)] border border-[var(--hairline-strong)] hover:border-white/30 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]',
+    'bg-white/[0.04] hover:bg-white/[0.08] text-[var(--bone)] border border-white/12 hover:border-white/30 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]',
   ghost:
-    'bg-transparent hover:bg-white/[0.05] text-[var(--ash)] hover:text-[var(--bone)] border border-transparent',
+    'bg-transparent hover:bg-white/[0.05] text-[var(--mist)] hover:text-white border border-transparent',
   gold:
-    'bg-[var(--gold)]/15 hover:bg-[var(--gold)]/25 text-[#ffd700] border border-[var(--gold)]/40 shadow-[0_4px_16px_rgba(212,175,55,0.2),inset_0_1px_0_rgba(255,255,255,0.2)]',
+    'bg-gradient-to-r from-[#78350f] via-[#b45309] to-[#78350f] text-[#fef3c7] border border-[#f59e0b]/40 shadow-[0_4px_20px_rgba(245,158,11,0.25)]',
 };
 
 const SIZE_CLASSES: Record<ButtonSize, string> = {
-  sm: 'px-3.5 py-1.5 text-xs',
+  sm: 'px-4 py-1.5 text-xs',
   md: 'px-5 py-2.5 text-xs sm:text-sm',
-  lg: 'px-6 py-3.5 text-sm sm:text-base',
+  lg: 'px-7 py-3 text-sm sm:text-base font-semibold',
 };
 
 export default function Button({
@@ -41,7 +43,7 @@ export default function Button({
   href,
   onClick,
   type = 'button',
-  variant = 'primary',
+  variant = 'katana',
   size = 'md',
   magnetic = false,
   className = '',
@@ -64,7 +66,7 @@ export default function Button({
 
   const handleLeave = () => setOffset({ x: 0, y: 0 });
 
-  const sharedClasses = `inline-flex items-center justify-center gap-2 rounded-xl font-medium tracking-normal transition-all duration-200 cursor-pointer select-none active:scale-[0.97] min-h-[44px] ${VARIANT_CLASSES[variant]} ${SIZE_CLASSES[size]} ${className}`;
+  const sharedClasses = `inline-flex items-center justify-center gap-2 rounded-xl font-medium tracking-wide transition-all duration-300 cursor-pointer select-none active:scale-[0.97] min-h-[44px] ${VARIANT_CLASSES[variant]} ${SIZE_CLASSES[size]} ${className}`;
 
   const content = href ? (
     external ? (
