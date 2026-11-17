@@ -1,82 +1,98 @@
 import React from 'react';
 import Link from 'next/link';
-import type { Metadata } from 'next';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { ALL_PROJECT_DETAILS } from '@/lib/data/projectsDetailData';
-import { ArrowRight } from 'lucide-react';
+import Section from '@/components/ui/Section';
 import Reveal from '@/components/ui/Reveal';
+import Button from '@/components/ui/Button';
+import {
+  FLAGSHIP_KMARKET,
+  FLAGSHIP_PROFECHILENO,
+  PORTFOLIO_PROJECTS,
+} from '@/lib/data/projectsData';
 
-export const metadata: Metadata = {
-  title: 'Proyectos y Trabajos Realizados | Kaibutsu',
+export const metadata = {
+  title: 'Proyectos y Arquitecturas | Kaibutsu 怪物',
   description:
-    'Conoce las páginas web, tiendas online y sistemas que hemos creado en Chile. Puedes ver cada trabajo explicado en simple para personas o en su detalle técnico.',
+    'Explora nuestras plataformas en producción y proyectos desarrollados. Vista técnica y para personas de cada arquitectura en Next.js, React y NestJS.',
 };
 
-export default function ProyectosHubPage() {
-  const projects = Object.values(ALL_PROJECT_DETAILS);
+export default function ProyectosIndexPage() {
+  const allProjects = [FLAGSHIP_KMARKET, FLAGSHIP_PROFECHILENO, ...PORTFOLIO_PROJECTS];
 
   return (
-    <div className="min-h-screen bg-[var(--ink-bg)] text-[var(--bone)] flex flex-col washi-grain">
+    <div className="relative min-h-screen bg-[var(--ink-bg)] text-[var(--bone)] flex flex-col">
       <Navbar />
-      <main className="flex-1 pt-36 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full space-y-14">
-        <header className="border-b border-[var(--hairline)] pb-8 space-y-3 max-w-3xl">
-          <span className="font-mono-tech text-xs uppercase tracking-[0.2em] text-[var(--hanko)] block">
-            Trabajos Realizados
-          </span>
-          <h1 className="font-dela text-3xl sm:text-5xl text-[var(--bone)] tracking-tight">
-            Páginas y sistemas que hemos construido
-          </h1>
-          <p className="text-[var(--ash)] text-sm sm:text-base leading-relaxed">
-            Al abrir cualquiera de nuestros trabajos puedes elegir entre la{' '}
-            <strong className="text-[var(--bone)]">Vista para Personas</strong> (explicada en
-            simple con ejemplos de uso diario) o la{' '}
-            <strong className="text-[var(--bone)]">Vista Técnica</strong> (con las herramientas y
-            estructura interna).
-          </p>
-        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, idx) => (
-            <Reveal key={project.id} delay={idx * 0.05} className="flex">
-              <Link
-                href={`/proyectos/${project.id}`}
-                className="sumi-card rounded-[4px] p-7 flex flex-col justify-between group w-full"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-[var(--hairline)] pb-3 font-mono-tech text-[11px]">
-                    <span className="text-[var(--hanko)] uppercase tracking-wider">
-                      {project.category}
-                    </span>
-                    <span className="text-[var(--ash)]">{project.status}</span>
-                  </div>
+      <main className="flex-1 pt-24">
+        <Section
+          id="proyectos-hero"
+          index="PROYECTOS"
+          eyebrow="Portafolio Técnico"
+          title="Plataformas y Sistemas Construidos"
+          subtitle="Cada proyecto cuenta con una vista de negocio y una vista técnica con métricas, decisiones de diseño de software y lecciones aprendidas."
+          kanjiWatermark="作"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allProjects.map((p, idx) => (
+              <Reveal key={p.id} delay={idx * 0.05} className="flex">
+                <Link
+                  href={`/proyectos/${p.id}`}
+                  className="sumi-card rounded-2xl p-7 flex flex-col justify-between group w-full transition-all"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between border-b border-[var(--hairline)] pb-3 font-mono text-xs">
+                      <span className="text-[#f87171] uppercase tracking-wider font-semibold">
+                        {p.category}
+                      </span>
+                      <span className="text-[var(--mist)]">{p.status}</span>
+                    </div>
 
-                  <div>
-                    <h2 className="font-dela text-xl text-[var(--bone)] group-hover:text-[var(--hanko)] transition-colors">
-                      {project.name}
-                    </h2>
-                    <p className="text-xs text-[var(--ash)] font-mono-tech mt-1">
-                      {project.tagline}
+                    <div>
+                      <h3 className="font-heading font-bold text-xl text-[var(--bone)] flex items-center justify-between">
+                        <span>{p.name}</span>
+                        <ArrowUpRight className="w-4 h-4 text-[var(--mist)] group-hover:text-[#f87171] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                      </h3>
+                      <p className="text-xs text-[var(--gold)] font-mono mt-1">{p.tagline}</p>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-[var(--mist)] leading-relaxed">
+                      {p.description}
                     </p>
+
+                    <div className="flex flex-wrap gap-1.5 pt-2">
+                      {p.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="px-2.5 py-0.5 rounded-lg bg-white/[0.03] text-[10px] font-mono text-[var(--mist)]"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[var(--ash)] leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
+                  <div className="pt-4 mt-6 border-t border-[var(--hairline)] flex items-center justify-between text-xs font-mono">
+                    <span className="text-[var(--mist)]">Arquitectura y Métricas</span>
+                    <span className="text-[var(--bone)] font-semibold group-hover:text-[#f87171] transition-colors">
+                      Ver detalle →
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
 
-                <div className="pt-5 border-t border-[var(--hairline)] mt-6 flex items-center justify-between text-xs font-mono-tech text-[var(--ash)]">
-                  <span>Para Personas · Técnico</span>
-                  <span className="inline-flex items-center gap-1 text-[var(--bone)] group-hover:text-[var(--hanko)] transition-colors">
-                    <span>Ver Detalle</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+          <div className="mt-12 text-center pt-8 border-t border-[var(--hairline)]">
+            <Button href="/#cotizador" variant="primary" size="lg">
+              <span>Cotizar un Proyecto Similar</span>
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </div>
+        </Section>
       </main>
+
       <Footer />
     </div>
   );

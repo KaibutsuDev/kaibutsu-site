@@ -39,13 +39,13 @@ export default function ProfeChilenoFeatures() {
       {PROFE_FEATURES.map((item) => (
         <div
           key={item.index}
-          className="p-4 rounded-[4px] bg-[#070709]/60 border border-[var(--hairline)] space-y-1.5"
+          className="p-4 rounded-xl bg-white/[0.02] border border-white/10 space-y-1.5"
         >
-          <span className="font-mono-tech text-[11px] text-[var(--hanko)] font-bold block">
+          <span className="font-mono text-xs text-[#f87171] font-bold block">
             {item.index}
           </span>
-          <h4 className="text-sm font-bold text-[var(--bone)]">{item.title}</h4>
-          <p className="text-xs text-[var(--ash)] leading-relaxed">{item.desc}</p>
+          <h4 className="text-sm font-heading font-bold text-[var(--bone)]">{item.title}</h4>
+          <p className="text-xs text-[var(--mist)] leading-relaxed">{item.desc}</p>
         </div>
       ))}
     </div>

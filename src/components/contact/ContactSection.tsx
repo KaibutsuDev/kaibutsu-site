@@ -9,9 +9,9 @@ export default function ContactSection() {
     <Section
       id="contact"
       index="06"
-      eyebrow="Hablemos"
-      title="Cuéntanos qué quieres hacer con tu página o negocio"
-      subtitle="Escríbenos con tus propias palabras qué necesitas crear o arreglar. Te respondemos rápido con un valor claro en pesos chilenos y cuánto demora."
+      eyebrow="Contacto Comercial"
+      title="Conversemos sobre los requerimientos de tu proyecto"
+      subtitle="Escríbenos con tus requerimientos o agenda una llamada técnica. Te respondemos el mismo día con una estimación real de costos en pesos chilenos y tiempos de desarrollo."
       kanjiWatermark="縁"
       sceneSrc="/images/scene-contact-sumie.webp"
       sceneAlt="Escena nocturna sumi-e de contacto"
@@ -26,26 +26,25 @@ export default function ContactSection() {
         <Reveal delay={0.08} className="lg:col-span-5 space-y-6">
           <div className="sumi-card rounded-2xl p-6 sm:p-8 space-y-6">
             <div className="space-y-2 border-b border-[var(--hairline)] pb-4">
-              <span className="hanko-seal px-3 py-1 text-[11px] font-mono uppercase tracking-wider font-semibold">
-                Trato Directo
+              <span className="text-xs font-mono uppercase tracking-widest text-[#f87171] font-semibold block">
+                ATENCIÓN DIRECTA
               </span>
               <h3 className="font-heading font-bold text-xl text-[var(--bone)] pt-1">
-                Hablas directo con quienes hacen tu página
+                Atención directa con ingenieros de software
               </h3>
               <p className="text-xs sm:text-sm text-[var(--mist)] leading-relaxed">
-                Sin intermediarios ni letra chica. Te explicamos todo en simple desde el
-                primer mensaje para que elijas lo que de verdad le sirve a tu negocio.
+                Sin intermediarios ni cláusulas confusas. Analizamos la viabilidad técnica y los costos reales de infraestructura desde la primera conversación.
               </p>
             </div>
 
             <div className="space-y-3 text-xs">
               <div className="flex justify-between py-2 border-b border-[var(--hairline)]">
                 <span className="text-[var(--mist)]">Tiempo de respuesta</span>
-                <span className="text-[var(--bone)] font-medium">Dentro del mismo día</span>
+                <span className="text-[var(--bone)] font-medium">Dentro del mismo día hábil</span>
               </div>
               <div className="flex justify-between py-2 border-b border-[var(--hairline)]">
-                <span className="text-[var(--mist)]">Primera conversación</span>
-                <span className="text-[var(--bone)] font-medium">Gratis y sin compromiso</span>
+                <span className="text-[var(--mist)]">Evaluación inicial</span>
+                <span className="text-[var(--bone)] font-medium">Sin costo ni compromiso</span>
               </div>
               <div className="flex justify-between py-2 border-b border-[var(--hairline)]">
                 <span className="text-[var(--mist)]">WhatsApp directo</span>

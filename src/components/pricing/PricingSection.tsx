@@ -11,8 +11,8 @@ export default function PricingSection() {
       id="pricing"
       index="02"
       eyebrow="Valores y Plazos"
-      title="Precios claros en Pesos Chilenos (CLP)"
-      subtitle="Sabes exactamente cuánto cuesta y cuándo estará lista antes de partir. Sin letras chicas ni cobros sorpresa."
+      title="Inversión transparente en Pesos Chilenos (CLP)"
+      subtitle="Estructura de costos predecible con alcance definido y plazos realistas antes de iniciar la construcción. Sin cargos imprevistos."
       kanjiWatermark="価"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -28,9 +28,9 @@ export default function PricingSection() {
                 }`}
               >
                 {isFeatured && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="hanko-seal px-3.5 py-1 text-[11px] font-mono uppercase tracking-wider font-bold shadow-md">
-                      ★ Más Solicitado
+                  <div className="absolute -top-3 left-6">
+                    <span className="inline-block px-3 py-0.5 rounded-full text-[11px] font-mono uppercase tracking-widest font-bold bg-[var(--hanko)] text-white shadow-md">
+                      Plan Recomendado
                     </span>
                   </div>
                 )}
@@ -41,11 +41,11 @@ export default function PricingSection() {
                     <span className="text-xs font-mono font-bold text-[var(--gold)] uppercase tracking-wider">
                       {tier.category}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-[var(--bone)] mt-1">
+                    <h3 className="text-xl sm:text-2xl font-heading font-bold text-[var(--bone)] mt-1">
                       {tier.name}
                     </h3>
                     <p className="text-xs text-[var(--mist)] mt-1">
-                      Tiempo estimado: <strong className="text-[var(--bone)]">{tier.timeline}</strong>
+                      Plazo estimado: <strong className="text-[var(--bone)]">{tier.timeline}</strong>
                     </p>
                   </div>
 
@@ -54,7 +54,7 @@ export default function PricingSection() {
                     <span className="text-xs font-mono text-[var(--mist)] uppercase tracking-wider block">
                       {tier.priceSubtext}
                     </span>
-                    <div className="text-3xl sm:text-4xl font-serif font-bold text-[var(--bone)] mt-0.5">
+                    <div className="text-3xl sm:text-4xl font-heading font-extrabold text-[var(--bone)] mt-0.5">
                       {tier.priceLabel}
                       <span className="text-xs font-mono font-normal text-[var(--gold)] ml-2">CLP</span>
                     </div>
@@ -64,7 +64,7 @@ export default function PricingSection() {
                   <ul className="space-y-3">
                     {tier.deliverables.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-xs sm:text-sm text-[var(--bone)]/90">
-                        <Check className="w-4 h-4 text-[var(--hanko)] shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-[#f87171] shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -75,7 +75,7 @@ export default function PricingSection() {
                 <div className="pt-6 mt-6 border-t border-[var(--hairline)]">
                   <Button
                     href={tier.ctaHref}
-                    variant={isFeatured ? 'primary' : 'secondary'}
+                    variant={isFeatured ? 'primary' : 'katana'}
                     className="w-full justify-center"
                     size="md"
                   >

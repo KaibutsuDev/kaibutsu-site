@@ -63,17 +63,17 @@ export default function Section({
             {eyebrow && (
               <div className="flex items-center gap-2.5">
                 {index && (
-                  <span className="font-mono text-xs font-bold text-[var(--hanko)]">
+                  <span className="font-mono text-xs font-bold text-[#f87171]">
                     {index}
                   </span>
                 )}
-                <span className="hanko-seal px-2.5 py-0.5 text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-semibold">
+                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#f87171] font-semibold border-l-2 border-[var(--hanko)] pl-2">
                   {eyebrow}
                 </span>
               </div>
             )}
             {title && (
-              <h2 className="font-dela text-2xl sm:text-3xl lg:text-4xl text-[var(--bone)] tracking-tight leading-[1.15]">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[var(--bone)] tracking-tight leading-[1.15]">
                 {title}
               </h2>
             )}

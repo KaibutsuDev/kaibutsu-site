@@ -7,12 +7,12 @@ import Button from '@/components/ui/Button';
 
 export default function KMarketSection() {
   return (
-    <div className="sumi-card rounded-[4px] p-6 sm:p-10 lg:p-12">
+    <div className="sumi-card rounded-2xl p-6 sm:p-10 lg:p-12">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-6 space-y-6">
           <div className="flex items-center justify-between border-b border-[var(--hairline)] pb-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-[4px] bg-white/[0.03] border border-[var(--hairline-strong)] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
                 <Image
                   src="/images/k-market/k-market-isotipo-km.svg"
                   alt="K-Market Isotipo"
@@ -22,20 +22,20 @@ export default function KMarketSection() {
                 />
               </div>
               <div>
-                <span className="font-mono-tech text-[11px] uppercase tracking-[0.18em] text-[var(--hanko)] block">
-                  Caso 01 · Comercios de Barrio y Locales de Comida
+                <span className="font-mono text-xs uppercase tracking-widest text-[#f87171] font-semibold block">
+                  Caso 01 · Plataforma Multi-Tenant para Comercio
                 </span>
-                <h3 className="font-dela text-2xl sm:text-3xl text-[var(--bone)]">
+                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-[var(--bone)]">
                   K-Market
                 </h3>
               </div>
             </div>
-            <span className="hanko-seal px-2.5 py-1 rounded-[3px] font-mono-tech text-[10px] uppercase tracking-wider">
-              Funcionando Hoy
+            <span className="inline-block px-3 py-1 rounded-full text-[11px] font-mono uppercase tracking-wider font-semibold bg-[var(--hanko)]/20 text-[#fca5a5] border border-[var(--hanko)]/40">
+              En Producción
             </span>
           </div>
 
-          <p className="text-[var(--ash)] text-sm sm:text-base leading-relaxed">
+          <p className="text-[var(--mist)] text-sm sm:text-base leading-relaxed">
             {FLAGSHIP_KMARKET.description}
           </p>
 
@@ -43,23 +43,23 @@ export default function KMarketSection() {
             {(FLAGSHIP_KMARKET.metrics || []).map((m) => (
               <div
                 key={m.label}
-                className="p-3.5 rounded-[4px] bg-[#070709]/70 border border-[var(--hairline)]"
+                className="p-4 rounded-xl bg-white/[0.02] border border-white/10"
               >
-                <div className="font-mono-tech text-lg font-bold text-[var(--bone)]">
+                <div className="font-heading text-lg font-bold text-[var(--bone)]">
                   {m.value}
                 </div>
-                <div className="text-[11px] text-[var(--ash)] mt-0.5">{m.label}</div>
+                <div className="text-xs text-[var(--mist)] mt-0.5">{m.label}</div>
               </div>
             ))}
           </div>
 
           <div className="pt-2 flex flex-wrap items-center gap-3">
             <Button href="/proyectos/k-market" variant="primary" size="md">
-              <span>Ver Cómo Funciona</span>
+              <span>Ver Arquitectura</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Button>
-            <Button href="https://k-market.cl" external variant="secondary" size="md">
-              <span>Ir a k-market.cl</span>
+            <Button href="https://k-market.cl" external variant="katana" size="md">
+              <span>Visitar k-market.cl</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </Button>
           </div>

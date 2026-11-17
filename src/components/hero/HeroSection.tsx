@@ -6,10 +6,10 @@ import Reveal from '@/components/ui/Reveal';
 import BrandMarkSvg from '@/components/ui/BrandMarkSvg';
 
 const HERO_METRICS = [
-  { value: 'Desde $250.000', label: 'Valores claros en CLP' },
-  { value: 'Carga < 1 seg', label: 'Velocidad Next.js' },
-  { value: '100% Tuyo', label: 'Código y dominio propios' },
-  { value: 'SaaS Activos', label: 'K-Market y ProfeChileno' },
+  { value: 'Desde $290.000', label: 'Inversión clara en pesos chilenos (+ IVA)' },
+  { value: 'Carga < 1 seg', label: 'Infraestructura Next.js y Edge CDN' },
+  { value: '100% Propietario', label: 'Código fuente y cuentas bajo tu control' },
+  { value: 'SaaS en Operación', label: 'K-Market y ProfeChileno activos' },
 ];
 
 export default function HeroSection() {
@@ -28,7 +28,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#070709]/70 via-[#42040d]/20 to-[var(--ink-bg)]" />
       </div>
 
-      {/* Monumental Kanji Watermark (Desplazado a la extrema derecha para NO colisionar con el logo) */}
+      {/* Monumental Kanji Watermark */}
       <div
         aria-hidden="true"
         className="absolute -top-10 -right-6 sm:right-0 pointer-events-none select-none z-0 overflow-hidden"
@@ -43,27 +43,23 @@ export default function HeroSection() {
           {/* Main Editorial Column */}
           <div className="lg:col-span-8 space-y-6 sm:space-y-8">
             <Reveal y={12}>
-              <div className="flex flex-wrap items-center gap-2.5">
-                <span className="hanko-seal px-3.5 py-1 text-xs font-mono uppercase tracking-wider font-semibold">
-                  KATANA STUDIO · CHILE
-                </span>
-                <span className="text-xs sm:text-sm font-medium text-[var(--mist)]">
-                  Páginas Web · Tiendas Online · Software a Medida
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-[var(--hanko)] shrink-0" />
+                <span className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#f87171] font-semibold">
+                  ESTUDIO DE SOFTWARE Y PLATAFORMAS WEB · CHILE
                 </span>
               </div>
             </Reveal>
 
             <Reveal delay={0.06} y={16}>
               <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[var(--bone)] tracking-tight leading-[1.1]">
-                Hacemos páginas web y software para que vendas más y ordenes tu negocio.
+                Desarrollo de software y plataformas web de alta precisión para empresas y comercios.
               </h1>
             </Reveal>
 
             <Reveal delay={0.12} y={16}>
               <p className="text-base sm:text-lg text-[var(--mist)] max-w-2xl leading-relaxed">
-                Para negocios, profesionales y proyectos en Chile que necesitan recibir pedidos por WhatsApp,
-                cobrar por internet con Webpay o tener una plataforma a la medida sin letras chicas.
-                Creadores de <strong className="text-[var(--bone)] font-semibold">K-Market</strong> y <strong className="text-[var(--bone)] font-semibold">ProfeChileno</strong>.
+                Diseñamos y programamos plataformas corporativas, comercio electrónico con pagos Webpay y sistemas operacionales a medida. Sin plantillas genéricas lentas ni costos ocultos. Creadores de los sistemas en producción <strong className="text-[var(--bone)] font-semibold">K-Market</strong> y <strong className="text-[var(--bone)] font-semibold">ProfeChileno</strong>.
               </p>
             </Reveal>
 
@@ -74,7 +70,7 @@ export default function HeroSection() {
                   <ArrowRight className="w-4 h-4" />
                 </Button>
                 <Button href="#pricing" variant="katana" size="lg" className="w-full sm:w-auto">
-                  <span>Ver Precios en CLP</span>
+                  <span>Ver Planes y Precios CLP</span>
                 </Button>
               </div>
             </Reveal>
@@ -84,7 +80,7 @@ export default function HeroSection() {
           <div className="lg:col-span-4 flex justify-center lg:justify-end">
             <Reveal delay={0.15}>
               <div className="relative w-48 h-48 sm:w-60 sm:h-60 lg:w-72 lg:h-72 flex items-center justify-center">
-                {/* Intense Crimson Background Glow inspired by reference */}
+                {/* Intense Crimson Background Glow */}
                 <div className="absolute inset-0 bg-radial from-[#c8102e]/40 via-[#8b0a1d]/20 to-transparent rounded-full blur-3xl pointer-events-none animate-pulse" />
                 
                 <div className="relative w-full h-full p-8 rounded-3xl bg-gradient-to-b from-[#181a26]/90 via-[#10121a]/85 to-[#0b0c12]/95 border border-white/15 backdrop-blur-2xl flex items-center justify-center shadow-[0_16px_48px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.15)] group hover:border-[#c8102e]/50 transition-all duration-300">
